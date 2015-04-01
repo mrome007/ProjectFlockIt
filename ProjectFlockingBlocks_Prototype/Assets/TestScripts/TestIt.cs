@@ -8,7 +8,7 @@ public static class TestIt
     {
         if(!condition)
         {
-            Debug.LogWarning(message);
+            Debug.LogError(message);
             throw new Exception();
         }
     }
