@@ -22,7 +22,11 @@ public class TestCameraFollow : MonoBehaviour
         }
         if (isFollowing.HasValue)
         {
-            TestIt.Assert(r.isVisible, notFollowingMessage);
+            if(!r.isVisible)
+            {
+                Debug.LogError(notFollowingMessage);
+            }
+            TestIt.Assert(r.isVisible);
         }
     }
 }

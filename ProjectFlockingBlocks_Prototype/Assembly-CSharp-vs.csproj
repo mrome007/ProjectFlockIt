@@ -48,12 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\ContinueFollow.cs" />
      <Compile Include="Assets\Scripts\DestroyBlock.cs" />
      <Compile Include="Assets\Scripts\PlayerDestroy.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\TestScripts\TestBlocks.cs" />
      <Compile Include="Assets\TestScripts\TestCameraFollow.cs" />
-     <Compile Include="Assets\TestScripts\TestCanDestroyBlocks.cs" />
+     <Compile Include="Assets\TestScripts\TestFollowPlayer.cs" />
      <Compile Include="Assets\TestScripts\TestIt.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerMovement.cs" />
  <Reference Include="UnityEngine.UI">

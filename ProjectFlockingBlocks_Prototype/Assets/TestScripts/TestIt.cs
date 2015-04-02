@@ -4,11 +4,10 @@ using System;
 
 public static class TestIt
 {
-    public static void Assert(bool condition, string message)
+    public static void Assert(bool condition)
     {
         if(!condition)
         {
-            Debug.LogError(message);
             throw new Exception();
         }
     }

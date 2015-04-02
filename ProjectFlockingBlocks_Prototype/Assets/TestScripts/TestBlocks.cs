@@ -22,18 +22,28 @@ public class TestBlocks : MonoBehaviour
 
     private int numMiniBlocks;
     private int currMiniBlocks;
+
+    private int totalMinisExpected;
+    
 	// Use this for initialization
 	void Start () 
     {
+        totalMinisExpected = 0;
         numMiniBlocks = 0;
         currMiniBlocks = 0;
 	    TestBlocksInScene();
+        for (int i = 0; i < testBlocks.Length; i++)
+        {
+            if (testBlocks[i] != null)
+            {
+                totalMinisExpected += testBlocks[i].GetComponent<DestroyBlock>().NumMiniSpawns;
+            }
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        TestDestroyingBlocks();
         if(toDestroy == null)
         {
             inBlock = false;
@@ -42,6 +52,7 @@ public class TestBlocks : MonoBehaviour
 
     void LateUpdate()
     {
+        TestDestroyingBlocks();
         TestMiniBlocks();
     }
 
@@ -50,7 +61,11 @@ public class TestBlocks : MonoBehaviour
     {
         testBlocks = GameObject.FindGameObjectsWithTag("Blocks");
         blocksInScene = testBlocks.Length > 0;
-        TestIt.Assert(blocksInScene, blocksInSceneMessage);
+        if(!blocksInScene)
+        {
+            Debug.LogError(blocksInSceneMessage);
+        }
+        TestIt.Assert(blocksInScene);
     }
 
     void OnTriggerEnter(Collider other)
@@ -60,12 +75,16 @@ public class TestBlocks : MonoBehaviour
         canDestroyBlocks = other.gameObject.tag == "Blocks";
         if (canDestroyBlocks)
         {
+            Debug.Log("I can destroy this blocks: " + other.gameObject.name + " " + countToDestroy);
             //test the destroying process.
             toDestroy = other.gameObject;
             countToDestroy = other.gameObject.GetComponent<DestroyBlock>().CurrDeathCount;
-            Debug.Log("I can destroy this blocks: " + other.gameObject.name);
         }
-        TestIt.Assert(canDestroyBlocks, canDestroyBlocksMessage);
+        if(!canDestroyBlocks)
+        {
+            Debug.Log(canDestroyBlocksMessage);
+        }
+        TestIt.Assert(canDestroyBlocks);
 
         
     }
@@ -87,7 +106,11 @@ public class TestBlocks : MonoBehaviour
             {
                 int currentDestroy = toDestroy.GetComponent<DestroyBlock>().CurrDeathCount;
                 isDestroyingBlocks = currentDestroy > countToDestroy;
-                TestIt.Assert(isDestroyingBlocks, isDestroyingBlocksMessage);
+                if(!isDestroyingBlocks)
+                {
+                    Debug.LogError(isDestroyingBlocksMessage);
+                }
+                TestIt.Assert(isDestroyingBlocks);
                 countToDestroy = currentDestroy;
             }
         }
@@ -95,17 +118,22 @@ public class TestBlocks : MonoBehaviour
 
     void TestMiniBlocks()
     {
-        numMiniBlocks = 0;
+        numMiniBlocks = totalMinisExpected;
         for(int i = 0; i < testBlocks.Length; i++)
         {
-            if(testBlocks[i] == null)
+            if(testBlocks[i] != null)
             {
-                numMiniBlocks++;
+                numMiniBlocks -= testBlocks[i].GetComponent<DestroyBlock>().NumMiniSpawns;
             }
         }
         currMiniBlocks = GameObject.FindGameObjectsWithTag("MiniBlocks").Length;
+        //Debug.Log(numMiniBlocks + " " + currMiniBlocks);
         areThereMiniBlocks = numMiniBlocks == currMiniBlocks;
-        TestIt.Assert(areThereMiniBlocks, areThereMiniBlocksMessage);
+        if (!areThereMiniBlocks)
+        {
+            Debug.LogError(areThereMiniBlocksMessage);
+        }
+        TestIt.Assert(areThereMiniBlocks);
     }
 
 }

@@ -38,7 +38,7 @@ public class TestPlayerMovement : MonoBehaviour
     {
         movementHorizontal = ((player.gameObject.transform.position.y == 0f)
                                   && (player.gameObject.transform.position.x == 0f));
-        TestIt.Assert(movementHorizontal, messageHorizontal);
+        TestIt.Assert(movementHorizontal);
     }
 
     private void TestDirectionChange()
@@ -47,12 +47,12 @@ public class TestPlayerMovement : MonoBehaviour
         if(player.CurrentlyFacing == 0)
         {
             changeDirection = player.gameObject.transform.GetChild(0).transform.rotation == Quaternion.Euler(0f, 180f, 0f);
-            TestIt.Assert(changeDirection, messageFacingLeft);
+            TestIt.Assert(changeDirection);
         }
         else//facing left
         {
             changeDirection = player.gameObject.transform.GetChild(0).transform.rotation == Quaternion.Euler(0f, 0f, 0f);
-            TestIt.Assert(changeDirection, messageFacingRight);
+            TestIt.Assert(changeDirection);
         }
     }
 }
