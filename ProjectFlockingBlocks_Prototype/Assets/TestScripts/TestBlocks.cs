@@ -75,14 +75,13 @@ public class TestBlocks : MonoBehaviour
         canDestroyBlocks = other.gameObject.tag == "Blocks";
         if (canDestroyBlocks)
         {
-            Debug.Log("I can destroy this blocks: " + other.gameObject.name + " " + countToDestroy);
             //test the destroying process.
             toDestroy = other.gameObject;
             countToDestroy = other.gameObject.GetComponent<DestroyBlock>().CurrDeathCount;
         }
         if(!canDestroyBlocks)
         {
-            Debug.Log(canDestroyBlocksMessage);
+            Debug.LogError(canDestroyBlocksMessage);
         }
         TestIt.Assert(canDestroyBlocks);
 
@@ -127,7 +126,6 @@ public class TestBlocks : MonoBehaviour
             }
         }
         currMiniBlocks = GameObject.FindGameObjectsWithTag("MiniBlocks").Length;
-        //Debug.Log(numMiniBlocks + " " + currMiniBlocks);
         areThereMiniBlocks = numMiniBlocks == currMiniBlocks;
         if (!areThereMiniBlocks)
         {

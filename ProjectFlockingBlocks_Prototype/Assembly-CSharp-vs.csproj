@@ -51,11 +51,14 @@
      <Compile Include="Assets\Scripts\ContinueFollow.cs" />
      <Compile Include="Assets\Scripts\DestroyBlock.cs" />
      <Compile Include="Assets\Scripts\PlayerDestroy.cs" />
+     <Compile Include="Assets\Scripts\PlayerModes.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\TestScripts\TestBlocks.cs" />
      <Compile Include="Assets\TestScripts\TestCameraFollow.cs" />
+     <Compile Include="Assets\TestScripts\TestControlMode.cs" />
      <Compile Include="Assets\TestScripts\TestFollowPlayer.cs" />
      <Compile Include="Assets\TestScripts\TestIt.cs" />
+     <Compile Include="Assets\TestScripts\TestModes.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
