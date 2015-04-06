@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\ContinueFollow.cs" />
+     <Compile Include="Assets\Scripts\ControlToTarget.cs" />
      <Compile Include="Assets\Scripts\DestroyBlock.cs" />
      <Compile Include="Assets\Scripts\PlayerDestroy.cs" />
      <Compile Include="Assets\Scripts\PlayerModes.cs" />

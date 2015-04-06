@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerModes : MonoBehaviour 
 {
+    public GameObject MiniContainer;
     public LayerMask GroundLayer;
     public enum PlayerMode
     {
@@ -73,8 +74,30 @@ public class PlayerModes : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 20.0f, GroundLayer))
             {
                 ControlTarget.z = hit.point.z;
-                Debug.Log(ControlTarget);
+                ControlSetMiniTarget(ControlTarget);
             }
+        }
+    }
+
+    void ControlSetMiniTarget(Vector3 target)
+    {
+        int numChild = MiniContainer.transform.childCount;
+        for (int index = 0; index < numChild; index++)
+        {
+            TestFollowPlayer tfp = MiniContainer.transform.GetChild(index).gameObject.GetComponent<TestFollowPlayer>();
+            tfp.enabled = false;
+            ContinueFollow cf = MiniContainer.transform.GetChild(index).gameObject.GetComponent<ContinueFollow>();
+            cf.enabled = false;
+            ControlToTarget cto = MiniContainer.transform.GetChild(index).gameObject.GetComponent<ControlToTarget>();
+            cto.Target = target;
+            cto.SetMiniTarget();
+            cto.enabled = true;
+        }
+
+        for(int index = 0; index < numChild; index++)
+        {
+            Debug.Log(index + " " + numChild);
+            MiniContainer.transform.GetChild(0).transform.parent = null;
         }
     }
 }
