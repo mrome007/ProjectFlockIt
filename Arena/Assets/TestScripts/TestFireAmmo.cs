@@ -13,13 +13,13 @@ public class TestFireAmmo : MonoBehaviour
     private const string isGoingForwardMessage = "Ammo is not going forward";
     #endregion
 
-    private float prevX;
-    private float currentX;
+    private Vector3 prevX;
+    private Vector3 currentX;
     private float timerTest = 0.35f;
     // Use this for initialization
 	void Start () 
     {
-        currentX = transform.position.x;
+        currentX = transform.position;
         prevX = currentX;
 	}
 	
@@ -45,8 +45,8 @@ public class TestFireAmmo : MonoBehaviour
         if(timerTest <= 0f)
         {
             timerTest = 0.35f;
-            currentX = transform.position.x;
-            isGoingForward = (currentX - prevX) > 0f;
+            currentX = transform.position;
+            isGoingForward = Vector3.Distance(currentX, prevX) > 0f;
             if(!isGoingForward)
             {
                 Debug.LogError(isGoingForwardMessage);

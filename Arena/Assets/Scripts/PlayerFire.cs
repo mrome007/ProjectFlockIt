@@ -21,9 +21,10 @@ public class PlayerFire : MonoBehaviour
 
     private void FireAndSpawnAmmo()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
+            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Instantiate(Ammo, SpawnAmmo.position, Quaternion.identity);
+            Instantiate(Ammo, SpawnAmmo.position, transform.GetChild(0).rotation);
         }
     }
 }

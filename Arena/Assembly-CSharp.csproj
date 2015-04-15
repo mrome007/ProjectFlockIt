@@ -48,10 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\FireAmmo.cs" />
+     <Compile Include="Assets\Scripts\PlayerDirection.cs" />
      <Compile Include="Assets\Scripts\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\TestScripts\TestCameraMovement.cs" />
      <Compile Include="Assets\TestScripts\TestFireAmmo.cs" />
+     <Compile Include="Assets\TestScripts\TestPlayerChangeDirection.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerFire.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerMovement.cs" />
  <Reference Include="UnityEngine.UI">
