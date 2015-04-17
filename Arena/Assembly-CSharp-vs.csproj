@@ -51,11 +51,14 @@
      <Compile Include="Assets\Scripts\PlayerDirection.cs" />
      <Compile Include="Assets\Scripts\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\WallActions.cs" />
+     <Compile Include="Assets\Scripts\WallProperties.cs" />
      <Compile Include="Assets\TestScripts\TestCameraMovement.cs" />
      <Compile Include="Assets\TestScripts\TestFireAmmo.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerChangeDirection.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerFire.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerMovement.cs" />
+     <Compile Include="Assets\TestScripts\TestWallActions.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
