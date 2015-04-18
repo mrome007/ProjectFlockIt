@@ -16,9 +16,13 @@ public class WallActions : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	    if(Input.GetKeyDown(KeyCode.M) && nextToWall)
+	    if(Input.GetKeyDown(KeyCode.Slash) && nextToWall)
         {
             currWall.GetComponent<WallProperties>().Clickable++;
+        }
+        if(currWall == null)
+        {
+            nextToWall = false;
         }
 	}
 
