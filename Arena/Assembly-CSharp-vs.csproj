@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\FireAmmo.cs" />
      <Compile Include="Assets\Scripts\MiniFollow.cs" />
+     <Compile Include="Assets\Scripts\PlayerDirect.cs" />
      <Compile Include="Assets\Scripts\PlayerDirection.cs" />
      <Compile Include="Assets\Scripts\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\TestScripts\TestFireAmmo.cs" />
      <Compile Include="Assets\TestScripts\TestMiniWallFollow.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerChangeDirection.cs" />
+     <Compile Include="Assets\TestScripts\TestPlayerDirect.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerFire.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerMovement.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerProperties.cs" />
