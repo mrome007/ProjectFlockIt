@@ -28,13 +28,15 @@ public class TestPlayerDirect : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) 
-            && (PlayerProperties.Minis.Count > 0) && (PlayerProperties.PlyerModes == PlayerProperties.PlayerModes.Direct))
+        if (PlayerProperties.PlyerModes == PlayerProperties.PlayerModes.Direct)
         {
-            Debug.Log("hello");
-            currMiniWalls = PlayerProperties.Minis.Count;
-            playDirected = true;
+            if ((PlayerProperties.Minis.Count > 0) &&(Input.GetKeyDown(KeyCode.UpArrow) || 
+                Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) 
+                || Input.GetKeyDown(KeyCode.RightArrow)))
+            {
+                playDirected = true;
+                currMiniWalls = PlayerProperties.Minis.Count;
+            }
         }
 	}
 
@@ -59,7 +61,7 @@ public class TestPlayerDirect : MonoBehaviour
     private void TestHasMiniWallListDecreased()
     {
         int theCurNumMinis = PlayerProperties.Minis.Count;
-        hasMiniWallListDecreased = theCurNumMinis < currMiniWalls;
+        hasMiniWallListDecreased = theCurNumMinis == currMiniWalls;
         if(!hasMiniWallListDecreased)
         {
             Debug.LogError(hasMiniWallListDecreasedMessage);

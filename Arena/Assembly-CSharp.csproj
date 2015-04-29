@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\EnemyTarget.cs" />
      <Compile Include="Assets\Scripts\FireAmmo.cs" />
+     <Compile Include="Assets\Scripts\MiniDirect.cs" />
      <Compile Include="Assets\Scripts\MiniFollow.cs" />
+     <Compile Include="Assets\Scripts\MiniWallProperties.cs" />
      <Compile Include="Assets\Scripts\PlayerDirect.cs" />
      <Compile Include="Assets\Scripts\PlayerDirection.cs" />
      <Compile Include="Assets\Scripts\PlayerFire.cs" />
@@ -58,7 +61,9 @@
      <Compile Include="Assets\Scripts\WallProperties.cs" />
      <Compile Include="Assets\TestScripts\TestCameraMovement.cs" />
      <Compile Include="Assets\TestScripts\TestFireAmmo.cs" />
+     <Compile Include="Assets\TestScripts\TestMiniDirect.cs" />
      <Compile Include="Assets\TestScripts\TestMiniWallFollow.cs" />
+     <Compile Include="Assets\TestScripts\TestMiniWallProperties.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerChangeDirection.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerDirect.cs" />
      <Compile Include="Assets\TestScripts\TestPlayerFire.cs" />
